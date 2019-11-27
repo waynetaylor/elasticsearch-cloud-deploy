@@ -79,7 +79,8 @@
     },
     {
       "type": "shell",
-      "script": "install-odfe.sh",
+      "script": "install-elasticsearch7.sh",
+      "environment_vars": [ "ES_VERSION={{user `elasticsearch_version`}}", "ODFE={{user `use_open_distro`}}" ],
       "execute_command": "echo '' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     },
     {

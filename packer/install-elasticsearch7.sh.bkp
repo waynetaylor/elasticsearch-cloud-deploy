@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+
+# Get the PGP Key
+if [ "$ODFE" == 'true' ]; then
+	wget -qO - https://d3g5vo6xdbdb9a.cloudfront.net/GPG-KEY-opendistroforelasticsearch | sudo apt-key add -
+	echo "deb https://d3g5vo6xdbdb9a.cloudfront.net/apt stable main" | sudo tee -a   /etc/apt/sources.list.d/opendistroforelasticsearch.list
+else
+	wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+	echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+fi
+
+apt-get update
+
+if [ -z "$ES_VERSION" ] && [ -z "$ODFE" ]; then
+    echo "installing the latest Elasticsearch version"
+    apt-get install elasticsearch
+elif [ "$ES_VERSION" ]; then
+	echo "Installing Elasticsearch version $ES_VERSION"
+    apt-get install elasticsearch=$ES_VERSION
+elif [ "$ODFE" == 'true' ]; then 
+	echo "Installing Open Distro for Elasticsearch version $ES_VERSION"
+	wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.2.1-amd64.deb
+	sudo dpkg -i elasticsearch-oss-7.2.1-amd64.deb
+	sudo apt-get update
+	apt-get install opendistroforelasticsearch
+else
+   	echo "Unexpected end here" 
+fi
+
+mv elasticsearch.yml /etc/elasticsearch/elasticsearch.yml

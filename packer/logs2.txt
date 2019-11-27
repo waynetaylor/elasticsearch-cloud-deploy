@@ -1,0 +1,278 @@
+[1;32mamazon-ebs output will be in this color.[0m
+
+[1;32mWarnings for build 'amazon-ebs':
+[0m
+[1;32m* spot_price_auto_product is deprecated and no longer necessary for Packer builds. In future versions of Packer, inclusion of spot_price_auto_product will error your builds. Please take a look at our current documentation to understand how Packer requests Spot instances.[0m
+[1;32m[0m
+[1;32m==> amazon-ebs: Prevalidating AMI Name: elasticsearch7-2019-11-27T18-10-48Z[0m
+[0;32m    amazon-ebs: Found Image ID: ami-00a208c7cdba991ea[0m
+[1;32m==> amazon-ebs: Creating temporary keypair: packer_5ddebc28-9412-f77d-caec-6a9a28da5803[0m
+[1;32m==> amazon-ebs: Creating temporary security group for this instance: packer_5ddebc2a-a228-1220-afb0-d207e216c54a[0m
+[1;32m==> amazon-ebs: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...[0m
+[1;32m==> amazon-ebs: Launching a spot AWS instance...[0m
+[1;32m==> amazon-ebs: Interpolating tags for spot instance...[0m
+[0;32m    amazon-ebs: Adding tag: "role": "packer"[0m
+[0;32m    amazon-ebs: Adding tag: "Name": "Packer Builder"[0m
+[0;32m    amazon-ebs: Loading User Data File...[0m
+[0;32m    amazon-ebs: Creating Spot Fleet launch template...[0m
+[0;32m    amazon-ebs: Sending spot request ()...[0m
+[0;32m    amazon-ebs: Instance ID: i-0eb4124f8058f526e[0m
+[1;32m==> amazon-ebs: Using ssh communicator to connect: 10.83.254.181[0m
+[1;32m==> amazon-ebs: Waiting for SSH to become available...[0m
+[1;32m==> amazon-ebs: Connected to SSH![0m
+[1;32m==> amazon-ebs: Provisioning with shell script: update-machine.sh[0m
+[0;32m    amazon-ebs: Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB][0m
+[0;32m    amazon-ebs: Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease[0m
+[0;32m    amazon-ebs: Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB][0m
+[0;32m    amazon-ebs: Get:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB][0m
+[0;32m    amazon-ebs: Get:5 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB][0m
+[0;32m    amazon-ebs: Get:6 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [575 kB][0m
+[0;32m    amazon-ebs: Get:7 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [190 kB][0m
+[0;32m    amazon-ebs: Get:8 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [13.2 kB][0m
+[0;32m    amazon-ebs: Get:9 http://security.ubuntu.com/ubuntu bionic-security/restricted Translation-en [4292 B][0m
+[0;32m    amazon-ebs: Get:10 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [622 kB][0m
+[0;32m    amazon-ebs: Get:11 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [208 kB][0m
+[0;32m    amazon-ebs: Get:12 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [5904 B][0m
+[0;32m    amazon-ebs: Get:13 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [2568 B][0m
+[0;32m    amazon-ebs: Get:14 http://archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB][0m
+[0;32m    amazon-ebs: Get:15 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB][0m
+[0;32m    amazon-ebs: Get:16 http://archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB][0m
+[0;32m    amazon-ebs: Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [799 kB][0m
+[0;32m    amazon-ebs: Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [283 kB][0m
+[0;32m    amazon-ebs: Get:19 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [21.9 kB][0m
+[0;32m    amazon-ebs: Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/restricted Translation-en [6128 B][0m
+[0;32m    amazon-ebs: Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1028 kB][0m
+[0;32m    amazon-ebs: Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [317 kB][0m
+[0;32m    amazon-ebs: Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [8520 B][0m
+[0;32m    amazon-ebs: Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [4044 B][0m
+[0;32m    amazon-ebs: Get:25 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [2512 B][0m
+[0;32m    amazon-ebs: Get:26 http://archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [1644 B][0m
+[0;32m    amazon-ebs: Get:27 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [4028 B][0m
+[0;32m    amazon-ebs: Get:28 http://archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [1856 B][0m
+[0;32m    amazon-ebs: Fetched 18.1 MB in 7s (2644 kB/s)[0m
+[0;32m    amazon-ebs: Reading package lists...[0m
+[0;32m    amazon-ebs: Reading package lists...[0m
+[0;32m    amazon-ebs: Building dependency tree...[0m
+[0;32m    amazon-ebs: Reading state information...[0m
+[0;32m    amazon-ebs: Calculating upgrade...[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_universe_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_universe_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_main_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_main_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_restricted_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_restricted_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_multiverse_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_multiverse_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_universe_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_universe_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_restricted_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_restricted_binary-amd64_Packages - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_main_i18n_Translation-en - open (2: No such file or directory)[0m
+[1;31m==> amazon-ebs: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_main_binary-amd64_Packages - open (2: No such file or directory)[0m
+[0;32m    amazon-ebs: Reading package lists...[0m
+[0;32m    amazon-ebs: Building dependency tree...[0m
+[0;32m    amazon-ebs: Reading state information...[0m
+[0;32m    amazon-ebs: htop is already the newest version (2.1.0-3).[0m
+[0;32m    amazon-ebs: htop set to manually installed.[0m
+[0;32m    amazon-ebs: git is already the newest version (1:2.17.1-1ubuntu0.4).[0m
+[0;32m    amazon-ebs: git set to manually installed.[0m
+[0;32m    amazon-ebs: software-properties-common is already the newest version (0.96.24.32.11).[0m
+[0;32m    amazon-ebs: software-properties-common set to manually installed.[0m
+[0;32m    amazon-ebs: The following additional packages will be installed:[0m
+[0;32m    amazon-ebs:   libc-dev-bin libc6-dev libexpat1-dev libjq1 libonig4 libopts25 libpython-dev[0m
+[0;32m    amazon-ebs:   libpython-stdlib libpython2.7 libpython2.7-dev libpython2.7-minimal[0m
+[0;32m    amazon-ebs:   libpython2.7-stdlib linux-libc-dev manpages-dev python python-minimal[0m
+[0;32m    amazon-ebs:   python2.7 python2.7-dev python2.7-minimal sntp[0m
+[0;32m    amazon-ebs: Suggested packages:[0m
+[0;32m    amazon-ebs:   glibc-doc ntp-doc python-doc python-tk python2.7-doc binutils binfmt-support[0m
+[0;32m    amazon-ebs: The following NEW packages will be installed:[0m
+[0;32m    amazon-ebs:   apt-transport-https jq libc-dev-bin libc6-dev libexpat1-dev libjq1 libonig4[0m
+[0;32m    amazon-ebs:   libopts25 libpython-dev libpython-stdlib libpython2.7 libpython2.7-dev[0m
+[0;32m    amazon-ebs:   libpython2.7-minimal libpython2.7-stdlib linux-libc-dev manpages-dev ntp[0m
+[0;32m    amazon-ebs:   python python-dev python-minimal python2.7 python2.7-dev python2.7-minimal[0m
+[0;32m    amazon-ebs:   sntp[0m
+[0;32m    amazon-ebs: 0 upgraded, 24 newly installed, 0 to remove and 29 not upgraded.[0m
+[0;32m    amazon-ebs: Need to get 40.7 MB of archives.[0m
+[0;32m    amazon-ebs: After this operation, 95.9 MB of additional disk space will be used.[0m
+[0;32m    amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libopts25 amd64 1:5.18.12-4 [58.2 kB][0m
+[0;32m    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 ntp amd64 1:4.2.8p10+dfsg-5ubuntu7.1 [640 kB][0m
+[0;32m    amazon-ebs: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7-minimal amd64 2.7.15-4ubuntu4~18.04.2 [336 kB][0m
+[0;32m    amazon-ebs: Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7-minimal amd64 2.7.15-4ubuntu4~18.04.2 [1296 kB][0m
+[0;32m    amazon-ebs: Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-minimal amd64 2.7.15~rc1-1 [28.1 kB][0m
+[0;32m    amazon-ebs: Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7-stdlib amd64 2.7.15-4ubuntu4~18.04.2 [1916 kB][0m
+[0;32m    amazon-ebs: Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7 amd64 2.7.15-4ubuntu4~18.04.2 [239 kB][0m
+[0;32m    amazon-ebs: Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libpython-stdlib amd64 2.7.15~rc1-1 [7620 B][0m
+[0;32m    amazon-ebs: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python amd64 2.7.15~rc1-1 [140 kB][0m
+[0;32m    amazon-ebs: Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 apt-transport-https all 1.6.12 [1692 B][0m
+[0;32m    amazon-ebs: Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libonig4 amd64 6.7.0-1 [119 kB][0m
+[0;32m    amazon-ebs: Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libjq1 amd64 1.5+dfsg-2 [111 kB][0m
+[0;32m    amazon-ebs: Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 jq amd64 1.5+dfsg-2 [45.6 kB][0m
+[0;32m    amazon-ebs: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libc-dev-bin amd64 2.27-3ubuntu1 [71.8 kB][0m
+[0;32m    amazon-ebs: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-70.79 [1079 kB][0m
+[0;32m    amazon-ebs: Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libc6-dev amd64 2.27-3ubuntu1 [2587 kB][0m
+[0;32m    amazon-ebs: Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1-dev amd64 2.2.5-3ubuntu0.2 [122 kB][0m
+[0;32m    amazon-ebs: Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7 amd64 2.7.15-4ubuntu4~18.04.2 [1053 kB][0m
+[0;32m    amazon-ebs: Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7-dev amd64 2.7.15-4ubuntu4~18.04.2 [28.3 MB][0m
+[0;32m    amazon-ebs: Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libpython-dev amd64 2.7.15~rc1-1 [7684 B][0m
+[0;32m    amazon-ebs: Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 manpages-dev all 4.15-1 [2217 kB][0m
+[0;32m    amazon-ebs: Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7-dev amd64 2.7.15-4ubuntu4~18.04.2 [276 kB][0m
+[0;32m    amazon-ebs: Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 python-dev amd64 2.7.15~rc1-1 [1256 B][0m
+[0;32m    amazon-ebs: Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 sntp amd64 1:4.2.8p10+dfsg-5ubuntu7.1 [86.9 kB][0m
+[0;32m    amazon-ebs: Fetched 40.7 MB in 1s (69.1 MB/s)[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libopts25:amd64.[0m
+[0;32m    amazon-ebs: (Reading database ... 56545 files and directories currently installed.)[0m
+[0;32m    amazon-ebs: Preparing to unpack .../0-libopts25_1%3a5.18.12-4_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libopts25:amd64 (1:5.18.12-4) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package ntp.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../1-ntp_1%3a4.2.8p10+dfsg-5ubuntu7.1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking ntp (1:4.2.8p10+dfsg-5ubuntu7.1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libpython2.7-minimal:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../2-libpython2.7-minimal_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libpython2.7-minimal:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package python2.7-minimal.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../3-python2.7-minimal_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking python2.7-minimal (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package python-minimal.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../4-python-minimal_2.7.15~rc1-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking python-minimal (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libpython2.7-stdlib:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../5-libpython2.7-stdlib_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libpython2.7-stdlib:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package python2.7.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../6-python2.7_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking python2.7 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libpython-stdlib:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../7-libpython-stdlib_2.7.15~rc1-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libpython-stdlib:amd64 (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Setting up libpython2.7-minimal:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up python2.7-minimal (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up python-minimal (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package python.[0m
+[0;32m    amazon-ebs: (Reading database ... 57360 files and directories currently installed.)[0m
+[0;32m    amazon-ebs: Preparing to unpack .../00-python_2.7.15~rc1-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking python (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package apt-transport-https.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../01-apt-transport-https_1.6.12_all.deb ...[0m
+[0;32m    amazon-ebs: Unpacking apt-transport-https (1.6.12) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libonig4:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../02-libonig4_6.7.0-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libonig4:amd64 (6.7.0-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libjq1:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../03-libjq1_1.5+dfsg-2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libjq1:amd64 (1.5+dfsg-2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package jq.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../04-jq_1.5+dfsg-2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking jq (1.5+dfsg-2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libc-dev-bin.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../05-libc-dev-bin_2.27-3ubuntu1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libc-dev-bin (2.27-3ubuntu1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package linux-libc-dev:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../06-linux-libc-dev_4.15.0-70.79_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking linux-libc-dev:amd64 (4.15.0-70.79) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libc6-dev:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../07-libc6-dev_2.27-3ubuntu1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libc6-dev:amd64 (2.27-3ubuntu1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libexpat1-dev:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../08-libexpat1-dev_2.2.5-3ubuntu0.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libexpat1-dev:amd64 (2.2.5-3ubuntu0.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libpython2.7:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../09-libpython2.7_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libpython2.7:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libpython2.7-dev:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../10-libpython2.7-dev_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libpython2.7-dev:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libpython-dev:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../11-libpython-dev_2.7.15~rc1-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libpython-dev:amd64 (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package manpages-dev.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../12-manpages-dev_4.15-1_all.deb ...[0m
+[0;32m    amazon-ebs: Unpacking manpages-dev (4.15-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package python2.7-dev.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../13-python2.7-dev_2.7.15-4ubuntu4~18.04.2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking python2.7-dev (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package python-dev.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../14-python-dev_2.7.15~rc1-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking python-dev (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package sntp.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../15-sntp_1%3a4.2.8p10+dfsg-5ubuntu7.1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking sntp (1:4.2.8p10+dfsg-5ubuntu7.1) ...[0m
+[0;32m    amazon-ebs: Setting up apt-transport-https (1.6.12) ...[0m
+[0;32m    amazon-ebs: Setting up libonig4:amd64 (6.7.0-1) ...[0m
+[0;32m    amazon-ebs: Setting up linux-libc-dev:amd64 (4.15.0-70.79) ...[0m
+[0;32m    amazon-ebs: Setting up libjq1:amd64 (1.5+dfsg-2) ...[0m
+[0;32m    amazon-ebs: Setting up libopts25:amd64 (1:5.18.12-4) ...[0m
+[0;32m    amazon-ebs: Setting up libc-dev-bin (2.27-3ubuntu1) ...[0m
+[0;32m    amazon-ebs: Setting up manpages-dev (4.15-1) ...[0m
+[0;32m    amazon-ebs: Setting up libc6-dev:amd64 (2.27-3ubuntu1) ...[0m
+[0;32m    amazon-ebs: Setting up libpython2.7-stdlib:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up jq (1.5+dfsg-2) ...[0m
+[0;32m    amazon-ebs: Setting up sntp (1:4.2.8p10+dfsg-5ubuntu7.1) ...[0m
+[0;32m    amazon-ebs: Setting up ntp (1:4.2.8p10+dfsg-5ubuntu7.1) ...[0m
+[0;32m    amazon-ebs: Created symlink /etc/systemd/system/network-pre.target.wants/ntp-systemd-netif.path → /lib/systemd/system/ntp-systemd-netif.path.[0m
+[0;32m    amazon-ebs: Created symlink /etc/systemd/system/multi-user.target.wants/ntp.service → /lib/systemd/system/ntp.service.[0m
+[0;32m    amazon-ebs: ntp-systemd-netif.service is a disabled or a static unit, not starting it.[0m
+[0;32m    amazon-ebs: Setting up python2.7 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up libpython-stdlib:amd64 (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Setting up libpython2.7:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up libexpat1-dev:amd64 (2.2.5-3ubuntu0.2) ...[0m
+[0;32m    amazon-ebs: Setting up libpython2.7-dev:amd64 (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up python2.7-dev (2.7.15-4ubuntu4~18.04.2) ...[0m
+[0;32m    amazon-ebs: Setting up python (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Setting up libpython-dev:amd64 (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Setting up python-dev (2.7.15~rc1-1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for systemd (237-3ubuntu10.31) ...[0m
+[0;32m    amazon-ebs: Processing triggers for man-db (2.8.3-2ubuntu0.1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for mime-support (3.60ubuntu1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for ureadahead (0.100.0-21) ...[0m
+[0;32m    amazon-ebs: Processing triggers for libc-bin (2.27-3ubuntu1) ...[0m
+[1;31m==> amazon-ebs: --2019-11-27 18:12:23--  https://bootstrap.pypa.io/get-pip.py[0m
+[1;31m==> amazon-ebs: Resolving bootstrap.pypa.io (bootstrap.pypa.io)... 151.101.248.175, 2a04:4e42:3b::175[0m
+[1;31m==> amazon-ebs: Connecting to bootstrap.pypa.io (bootstrap.pypa.io)|151.101.248.175|:443... connected.[0m
+[1;31m==> amazon-ebs: HTTP request sent, awaiting response... 200 OK[0m
+[1;31m==> amazon-ebs: Length: 1775835 (1.7M) [text/x-python][0m
+[1;31m==> amazon-ebs: Saving to: ‘get-pip.py’[0m
+[1;31m==> amazon-ebs:[0m
+[1;31m==> amazon-ebs:      0K .......... .......... .......... .......... ..........  2% 31.4M 0s[0m
+[1;31m==> amazon-ebs:     50K .......... .......... .......... .......... ..........  5% 37.6M 0s[0m
+[1;31m==> amazon-ebs:    100K .......... .......... .......... .......... ..........  8% 39.5M 0s[0m
+[1;31m==> amazon-ebs:    150K .......... .......... .......... .......... .......... 11% 27.1M 0s[0m
+[1;31m==> amazon-ebs:    200K .......... .......... .......... .......... .......... 14% 33.9M 0s[0m
+[1;31m==> amazon-ebs:    250K .......... .......... .......... .......... .......... 17% 34.8M 0s[0m
+[1;31m==> amazon-ebs:    300K .......... .......... .......... .......... .......... 20% 34.1M 0s[0m
+[1;31m==> amazon-ebs:    350K .......... .......... .......... .......... .......... 23% 39.1M 0s[0m
+[1;31m==> amazon-ebs:    400K .......... .......... .......... .......... .......... 25% 55.6M 0s[0m
+[1;31m==> amazon-ebs:    450K .......... .......... .......... .......... .......... 28% 43.5M 0s[0m
+[1;31m==> amazon-ebs:    500K .......... .......... .......... .......... .......... 31% 47.7M 0s[0m
+[1;31m==> amazon-ebs:    550K .......... .......... .......... .......... .......... 34% 38.5M 0s[0m
+[1;31m==> amazon-ebs:    600K .......... .......... .......... .......... .......... 37% 37.5M 0s[0m
+[1;31m==> amazon-ebs:    650K .......... .......... .......... .......... .......... 40% 63.0M 0s[0m
+[1;31m==> amazon-ebs:    700K .......... .......... .......... .......... .......... 43% 49.6M 0s[0m
+[1;31m==> amazon-ebs:    750K .......... .......... .......... .......... .......... 46% 52.0M 0s[0m
+[1;31m==> amazon-ebs:    800K .......... .......... .......... .......... .......... 49% 62.2M 0s[0m
+[1;31m==> amazon-ebs:    850K .......... .......... .......... .......... .......... 51%  126M 0s[0m
+[1;31m==> amazon-ebs:    900K .......... .......... .......... .......... .......... 54% 45.3M 0s[0m
+[1;31m==> amazon-ebs:    950K .......... .......... .......... .......... .......... 57% 75.4M 0s[0m
+[1;31m==> amazon-ebs:   1000K .......... .......... .......... .......... .......... 60% 77.0M 0s[0m
+[1;31m==> amazon-ebs:   1050K .......... .......... .......... .......... .......... 63% 43.0M 0s[0m
+[1;31m==> amazon-ebs:   1100K .......... .......... .......... .......... .......... 66%  205M 0s[0m
+[1;31m==> amazon-ebs:   1150K .......... .......... .......... .......... .......... 69% 48.6M 0s[0m
+[1;31m==> amazon-ebs:   1200K .......... .......... .......... .......... .......... 72% 77.7M 0s[0m
+[1;31m==> amazon-ebs:   1250K .......... .......... .......... .......... .......... 74%  204M 0s[0m
+[1;31m==> amazon-ebs:   1300K .......... .......... .......... .......... .......... 77%  135M 0s[0m
+[1;31m==> amazon-ebs:   1350K .......... .......... .......... .......... .......... 80% 36.8M 0s[0m
+[1;31m==> amazon-ebs:   1400K .......... .......... .......... .......... .......... 83% 51.9M 0s[0m
+[1;31m==> amazon-ebs:   1450K .......... .......... .......... .......... .......... 86%  127M 0s[0m
+[1;31m==> amazon-ebs:   1500K .......... .......... .......... .......... .......... 89%  234M 0s[0m
+[1;31m==> amazon-ebs:   1550K .......... .......... .......... .......... .......... 92% 81.1M 0s[0m
+[1;31m==> amazon-ebs:   1600K .......... .......... .......... .......... .......... 95% 43.0M 0s[0m
+[1;31m==> amazon-ebs:   1650K .......... .......... .......... .......... .......... 98% 66.5M 0s[0m
+[1;31m==> amazon-ebs:   1700K .......... .......... .......... ....                 100%  259M=0.03s[0m
+[1;31m==> amazon-ebs:[0m
+[1;31m==> amazon-ebs: 2019-11-27 18:12:23 (52.4 MB/s) - ‘get-pip.py’ saved [1775835/1775835][0m
+[1;31m==> amazon-ebs:[0m
